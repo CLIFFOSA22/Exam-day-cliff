@@ -21,10 +21,11 @@ jobs:
     - name: To run docker image In order to create a docker container
       run: docker run -d --name cliffapp-c -p 8080:8080 cliffapp:v1
 
-        
-    - name: To verify Python Web Server
-      run:  sleep 5 && curl --fail http://localhost:8080
-
     - name: Show Running Container
-      run: docker ps
+      run: docker ps -a
 
+    - name: Show Container Logs
+      run: docker logs cliffapp-c
+
+    - name: To verify Python Web Server
+      run: sleep 5 && curl --fail http://localhost:8080

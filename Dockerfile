@@ -4,4 +4,4 @@ COPY cliffapp.py .
 
 EXPOSE 8080
 
-CMD ["python", "cliffApp.py"]
+CMD ["python", "cliffapp.py"]

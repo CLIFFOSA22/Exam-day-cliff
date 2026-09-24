@@ -1,0 +1,30 @@
+name: Python-Docker-Exam
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build-run:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Python Docker In Exam
+      uses: actions/checkout@v4
+
+    - name: To build Docker image
+      run: docker build -t cliffApp:v1 .
+
+    - name: To run docker image In order to create a docker container
+      run: docker run -d --name cliffApp-c -p 8080:8080 cliffApp:v1
+
+        
+    - name: To verify Python Web Server
+      run: curl --fail http://localhost:8080
+
+    - name: Show Running Container
+      run: docker ps
+

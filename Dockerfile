@@ -1,7 +1,7 @@
 FROM python:3.12
 
-COPY cliffApp.py .
+COPY cliffapp.py .
 
 EXPOSE 8080
 
-CMD ["python", "cliffApp.py"]
+CMD ["python", "cliffapp.py"]

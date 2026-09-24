@@ -23,7 +23,7 @@ jobs:
 
         
     - name: To verify Python Web Server
-      run: curl --fail http://localhost:8080
+      run:  sleep 5 && curl --fail http://localhost:8080
 
     - name: Show Running Container
       run: docker ps
